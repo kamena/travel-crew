@@ -61,7 +61,6 @@ ul.menu li {
     float: left;
     padding: 0 30px;
     border-left: 1px solid #ccc;
-    /*opacity: 0.5;*/
 }
 
 ul.menu li:hover {
@@ -79,6 +78,7 @@ nav .menu-toggle {
   color: #fff;
   padding: 0;
   display: none;
+  outline:none;
 }
 nav .menu-toggle .fa {
   margin: 0;
@@ -106,6 +106,10 @@ nav .menu-toggle .fa {
   		width: 100%;
   	}
 
+    .visible {
+      display: block !important;
+    }
+
 	ul.menu li {
 		float: none;
 		border-bottom: 1px solid #ccc;
@@ -132,6 +136,7 @@ section.full-width {
 }
 
 .slider {
+  position: relative;
 	width: 100%;
 	height: 400px;
 	background-size: cover !important;
@@ -139,15 +144,61 @@ section.full-width {
 }
 
 .slider .info {
-	/*width: 100%; */
+    width: 70%;
     text-align: center;
-    margin: 180px 20% 0;
     padding: 20px;
-    /* height: 520px; */
-    float: right;
+    max-height: 320px;
     border-radius: 10px;
     background-color: rgba(241,241,241, 0.8);
-    border: #f1f1f1 solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.slider .info .visited {
+  float: left;
+  font-size: 16px;
+}
+
+.slider .info .favourited {
+  float: right;
+  font-size: 16px;
+}
+
+.slider .info .favourited:after {
+  font-family: FontAwesome;
+  content: "\f004";
+  padding-left: 5px;
+  font-size: 20px; 
+}
+
+.slider .info .visited:before {
+  font-family: FontAwesome;
+  content: "\f041";
+  padding-right: 5px;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .slider {
+    height: auto;
+  }
+
+  .slider .info {
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 0;
+    position: relative;
+    max-height: 100%;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
 }
 
 .container {
@@ -178,6 +229,14 @@ section.full-width {
         width: 100%;
     }
 }
+
+.top{top:0}
+.middle{top:50%;margin-top:-10px;/*half of the .box height*/}
+.bottom{bottom:0}
+
+.left{left:0;}
+.center{left:50%;margin-left:-10px;/*half of the .box width*/}
+.right{right:0;}
 
 section, footer {
     padding: 60px 0;
@@ -267,6 +326,28 @@ button.dark {
 }
 
 
+/*=====FORM=====*/
+form {
+  position: relative;
+  left: 50%;
+  top: 20%;
+  width: 40%;
+  background-color: rgba(250,250,250,0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input[type=text], select, input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
 
 
 /*=====FOOTER=====*/
@@ -282,9 +363,9 @@ footer {
 }
 
 .footer-column {
-	/*width: 20%;*/
 	display: inline-block;
 	vertical-align: top;
+  margin-right: 20px;
 }
 
 .icon-destination {
@@ -296,14 +377,33 @@ footer {
 
 .icon-destination p {
 	padding: 18px;
-    font-size: 18px;
-    text-transform: uppercase;
-    margin: 3px 0;
-    background-color: rgba(0,0,0, 0.4);
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 3px 0;
+  background-color: rgba(0,0,0, 0.4);
 }
 
 .icon-destination:hover p {
 	visibility: hidden;
+}
+
+.footer-traveller {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.icon-traveller {
+  width: 60px;
+  height: 60px;
+  background-size: cover !important;
+  background-position: top;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+.footer-traveller p {
+  vertical-align: middle;
 }
 
 @media only screen and (max-width:500px) {

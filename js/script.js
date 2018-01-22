@@ -16,13 +16,26 @@ jQuery(document).ready(function () {
 	    var i;
 	    var x = document.getElementsByClassName("slider");
 	    for (i = 0; i < x.length; i++) {
-	      x[i].style.display = "none"; 
+	      x[i].classList.add("hidden"); 
 	    }
 	    slideIndex++;
 	    if (slideIndex > x.length) {slideIndex = 1} 
-	    	// x[slideIndex-1].fadeIn("slow");
-	    x[slideIndex-1].style.display = "block"; 
+	    x[slideIndex-1].classList.remove("hidden"); 
 	    setTimeout(carousel, 5000); 
 	}
-});
 
+	function openMenu() {
+	   var element = document.getElementsByClassName("nav-right");
+	   element.classList.add("hidden");
+	}
+
+	document.getElementById("menu-toggle").onclick = function() {
+	    var x = document.getElementById("top-nav");
+	    if (x.className === "nav-right") {
+	        x.className += " visible";
+	    } else {
+	        x.className = "nav-right";
+	    }
+	};
+
+});
