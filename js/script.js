@@ -9,8 +9,12 @@ jQuery(document).ready(function () {
 	    }
 	});
 
-	var slideIndex = 0;
-	carousel();
+	
+
+	if(jQuery('body').is('.home')) {
+		var slideIndex = 0;
+		carousel();
+	}
 
 	function carousel() {
 	    var i;
