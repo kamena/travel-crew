@@ -26,7 +26,7 @@
 						<li><a href="index.html">Home</a></li>
 						<li><a href="explore.html">Explore</a></li>
 						<li><a href="travellers.html">Travellers</a></li>
-						<li><a href="login.html">Join the crew</a></li>
+						<li class="active"><a href="login.html">Join the crew</a></li>
 					</ul>
 				</div>
 			</div>
@@ -37,15 +37,34 @@
 		<section class="full-screen">
 			<div class="background-image-holder" style="background: url(&quot;img/2.jpg&quot;);">
                 <img alt="image" class="background-image" src="img/2.jpg" style="display: none;">
-	            	<div class="login-form">
+	            	<div class="login-register-form" id="login-form">
 	            		<h1>Login</h1>
-		                <form action="/action_page.php">
+		                <form id="login-form" action="/action_page.php">
 						    <input id="username" type="text" placeholder="Enter Username" name="uname" required>
 						    <input id="password" type="password" placeholder="Enter Password" name="psw" required>
 						        
 						    <button type="submit">Login</button>
 						    <input type="checkbox" checked="checked"> Remember me
 						</form>
+						<div class="form-bottom">
+							<p>Not a member yet?</p>
+							<button class="light-blue" id="register-form-link">Join us</button>
+						</div>
+					</div>
+					<div class="login-register-form" id="register-form">
+	            		<h1>Register</h1>
+		                <form id="register-form" action="/action_page.php">
+						    <input id="username" type="text" placeholder="Enter Username" name="uname" required>
+						    <input id="name" type="text" placeholder="Enter Name" name="name" required>
+						    <input id="email" type="email" placeholder="Enter E-mail" name="email" required>
+						    <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+						        
+						    <button type="submit">Register</button>
+						</form>
+						<div class="form-bottom">
+							<p>Already a member?</p>
+							<button class="light-blue" id="login-form-link">Log in</button>
+						</div>
 					</div>
             </div>
 		</section>

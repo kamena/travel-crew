@@ -38,8 +38,8 @@ p {
 .nav-bar {
 	height: 55px;
 	max-height: 55px;
-    border-bottom: 1px solid #ccc;
-    background-color: rgba(241,241,241, 0.4);
+  border-bottom: 1px solid #ccc;
+  background-color: rgba(241,241,241, 0.4);
 }
 
 .nav-bar .nav-left {
@@ -60,12 +60,19 @@ ul.menu {
 ul.menu li {
     display: inline-block;
     padding: 0 30px;
-    border-left: 1px solid #ccc;
 }
 
-ul.menu li:hover {
-	opacity: 1;
-	background-color: #f1f1f1;
+ul.menu li.active a {
+  color: #00adb5;
+}
+
+ul.menu li a {
+  transition: color 0.4s ease 0s;
+}
+
+ul.menu li:hover a {
+	color: #00adb5;
+  transition: color 0.4s ease 0s;
 }
 
 nav .menu-toggle {
@@ -429,7 +436,11 @@ button.dark {
 
 
 /*=====FORM=====*/
-.login-form {
+.login-register-form#register-form {
+  display: none;
+}
+
+.login-register-form {
   position: relative;
   left: 50%;
   top: 20%;
@@ -441,21 +452,21 @@ button.dark {
   border-radius: 10px;*/
 }
 
-.login-form h1 {
+.login-register-form h1 {
   border-bottom: 1px solid #D4D4D4;
   padding: 20px 30px;
   margin: 0;
 }
 
-.login-form form {
+.login-register-form form {
   padding: 20px;
 }
 
-.login-form button {
+.login-register-form button {
   width: 100%;
 }
 
-input[type=text], select, input[type=password] {
+input[type=text], select, input[type=password], input[type=email] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -466,13 +477,32 @@ input[type=text], select, input[type=password] {
 }
 
 @media only screen and (max-width:500px) {
-  .login-form {
+  .login-register-form {
     left: auto;
     width: 100%;
   }
 }
 
+.form-bottom {
+  text-align: right;
+  padding: 5px 20px;
+  border-top: 1px solid #D4D4D4;
+  background-color: #f1f1f1;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
 
+.form-bottom p {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.form-bottom button {
+  cursor: pointer;
+  width: auto;
+  color: #fff;
+  padding: 10px 20px;
+}
 
 
 /*=====FOOTER=====*/

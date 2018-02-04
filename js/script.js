@@ -42,4 +42,16 @@ jQuery(document).ready(function () {
 	    }
 	};
 
+    jQuery('#login-form-link').click(function(e) {
+		jQuery("#login-form").delay(100).fadeIn(100);
+ 		jQuery("#register-form").fadeOut(100);
+		e.preventDefault();
+	});
+
+	jQuery('#register-form-link').click(function(e) {
+		jQuery("#register-form").delay(100).fadeIn(100);
+ 		jQuery("#login-form").fadeOut(100);
+		e.preventDefault();
+	});
+
 });
