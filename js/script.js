@@ -16,7 +16,7 @@ jQuery(document).ready(function () {
 		carousel();
 	}
 
-	function carousel() {
+	function carousel(className) {
 	    var i;
 	    var x = document.getElementsByClassName("slider");
 	    for (i = 0; i < x.length; i++) {
