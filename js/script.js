@@ -9,6 +9,10 @@ jQuery(document).ready(function () {
 	    }
 	});
 
+	if(jQuery("body").is(".home")) {
+		var slideIndex = 0;
+	}
+
 	function carousel() {
 	    var i;
 	    var x = document.getElementsByClassName("slider");
@@ -22,7 +26,6 @@ jQuery(document).ready(function () {
 	}
 
 	if(jQuery("body").is(".home")) {
-		var slideIndex = 0;
 		carousel();
 	}
 
