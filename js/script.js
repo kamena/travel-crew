@@ -9,11 +9,6 @@ jQuery(document).ready(function () {
 	    }
 	});
 
-	if(jQuery("body").is(".home")) {
-		var slideIndex = 0;
-		carousel();
-	}
-
 	function carousel() {
 	    var i;
 	    var x = document.getElementsByClassName("slider");
@@ -22,8 +17,13 @@ jQuery(document).ready(function () {
 	    }
 	    slideIndex++;
 	    if (slideIndex > x.length) { slideIndex = 1; } 
-	    x[slideIndex-1].classList.remove("hidden"); 
+	    x[slideIndex - 1].classList.remove("hidden"); 
 	    setTimeout(carousel, 5000); 
+	}
+
+	if(jQuery("body").is(".home")) {
+		var slideIndex = 0;
+		carousel();
 	}
 
 	document.getElementById("menu-toggle").onclick = function() {
