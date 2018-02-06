@@ -20,7 +20,7 @@ p {
     line-height: 28px;
 }
 
-img {
+.place-info img {
   width: 100%;
   object-fit: cover;
 }
