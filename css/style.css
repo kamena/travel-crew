@@ -203,20 +203,6 @@ section.header-section .section-title {
   font-size: 16px;
 }
 
-.favourited:after {
-  font-family: FontAwesome;
-  content: "\f004";
-  padding-left: 5px;
-  font-size: 20px; 
-}
-
-.visited:before {
-  font-family: FontAwesome;
-  content: "\f041";
-  padding-right: 5px;
-  font-size: 20px;
-}
-
 .social-links {
   padding: 10px;
   transition: text-shadow .25s;
