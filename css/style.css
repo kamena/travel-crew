@@ -33,26 +33,22 @@ img {
   height: 400px;
 }
 
-.absolute {
-	position: absolute;
-	left: 0;
-	right: 0;
-	z-index: 999;
+.transparent .nav-bar {
+  background-color: rgba(241,241,241, 0.4);
 }
 
-.fixed {
-	position: fixed !important;
-}
-
-.fixed .nav-bar {
-	background-color: #fff !important;
+nav {
+  left: 0;
+  right: 0;
+  z-index: 999;
+  position: fixed;
 }
 
 .nav-bar {
-	height: 55px;
-	max-height: 55px;
+  height: 55px;
+  max-height: 55px;
   border-bottom: 1px solid #ccc;
-  background-color: rgba(241,241,241, 0.4);
+  background-color: #fff;
 }
 
 .nav-bar .nav-left {

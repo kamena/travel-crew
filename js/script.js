@@ -3,9 +3,9 @@ jQuery(document).ready(function () {
 	    var scroll = jQuery(window).scrollTop();
 
 	    if (scroll >= 500) {
-	        jQuery("nav").addClass("fixed");
+	    	jQuery("nav").removeClass("transparent");
 	    } else {
-	        jQuery("nav").removeClass("fixed");
+	        jQuery("nav").addClass("transparent");
 	    }
 	});
 
