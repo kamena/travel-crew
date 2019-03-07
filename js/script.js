@@ -1,53 +1,48 @@
 jQuery(document).ready(function () {
-	jQuery(window).scroll(function() {    
-	    var scroll = jQuery(window).scrollTop();
+	window.addEventListener("scroll", () => {
+		let scroll = window.scrollY;
 
-	    if (scroll >= 500) {
-	    	jQuery("nav").removeClass("transparent");
-	    } else {
-	        jQuery("nav").addClass("transparent");
-	    }
+		if(scroll >= 400) {
+			document.querySelector('nav').classList.remove('transparent');
+		} else {
+			document.querySelector('nav').classList.add('transparent');
+		}
 	});
 
-	if(jQuery("body").is(".home")) {
+	if(document.querySelector('body').classList.contains('home')) {
 		var slideIndex = 0;
+		carousel();
+		setInterval( carousel, 5000 );
 	}
 
 	function carousel() {
-	    var i;
-	    var x = document.getElementsByClassName("slider");
-	    for (i = 0; i < x.length; i++) {
-	      x[i].classList.add("hidden"); 
+	    let slides = document.querySelectorAll('.slider');
+	    for (let i = 0; i < slides.length; i++) {
+	      slides[i].classList.add("hidden");
 	    }
 	    slideIndex++;
-	    if (slideIndex > x.length) { slideIndex = 1; } 
-	    x[slideIndex - 1].classList.remove("hidden"); 
-	    setTimeout(carousel, 5000); 
+	    if (slideIndex > slides.length) { slideIndex = 1; }
+	    slides[slideIndex - 1].classList.remove("hidden");
 	}
 
-	if(jQuery("body").is(".home")) {
-		carousel();
-	}
-
-	document.getElementById("menu-toggle").onclick = function() {
-	    var x = document.getElementById("top-nav");
-	    if (x.className === "nav-right") {
-	        x.className += " visible";
-	    } else {
-	        x.className = "nav-right";
-	    }
-	};
-
-    jQuery("#login-form-link").click(function(e) {
-		jQuery("#login-form").delay(100).fadeIn(100);
- 		jQuery("#register-form").fadeOut(100);
-		e.preventDefault();
+	const menuToggle = document.querySelector('#menu-toggle');
+	const topNav = document.querySelector('#top-nav');
+	menuToggle.addEventListener('click', () => {
+		topNav.classList.toggle('visible');
 	});
 
-	jQuery("#register-form-link").click(function(e) {
-		jQuery("#register-form").delay(100).fadeIn(100);
- 		jQuery("#login-form").fadeOut(100);
-		e.preventDefault();
-	});
+	const loginFormButtons = document.querySelectorAll('.form-bottom');
+	var next = document.querySelector('#register-form');
+	var first = document.querySelector('#login-form');
 
+	loginFormButtons.forEach(formButton => {
+		formButton.addEventListener('click', (e) => {
+			e.preventDefault();
+			setTimeout(()=>{
+				next.classList.toggle('fade');
+				[first, next] = [next, first];
+			}, 100);
+			first.classList.toggle('fade');
+		});
+	});
 });

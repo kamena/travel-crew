@@ -35,7 +35,7 @@ p {
 
 .transparent .nav-bar {
   background-color: rgba(241,241,241, 0.4);
-  transition: background-color .25s; 
+  transition: background-color .25s;
 }
 
 nav {
@@ -46,31 +46,26 @@ nav {
 }
 
 .nav-bar {
-  height: 55px;
-  max-height: 55px;
-  border-bottom: 1px solid #ccc;
-  background-color: #fff;
-  transition: background-color .25s; 
-}
-
-.nav-bar .nav-left {
-	float: left;
-}
-
-.nav-bar .nav-right {
-	float: right;
-	line-height: 53px;
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  background-color: #ddd;
+  transition: background-color .25s;
 }
 
 ul.menu {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+		padding: 0;
 }
 
 ul.menu li {
     display: inline-block;
     padding: 0 30px;
+		font-size: 1.25em;
+		text-transform: uppercase;
+		line-height: 400%;
 }
 
 ul.menu li.active a {
@@ -90,7 +85,6 @@ nav .menu-toggle {
   border: none;
   background: none;
   font-size: 1.8em;
-  float: right;
   margin: 0;
   line-height: normal;
   color: #fff;
@@ -112,11 +106,8 @@ nav .menu-toggle .fa {
 }
 
 @media screen and (max-width: 600px) {
-  .nav-bar .nav-right li a:not(:first-child) {display: none;}
-  .nav-bar .nav-right li a.icon {
-	float: right;
-	display: block;
-  }
+  .nav-bar .nav-right li a:not(:first-child) { display: none; }
+  .nav-bar .nav-right li a.icon {	display: block; }
 
   	.nav-bar .nav-right {
   		display: none;
@@ -129,7 +120,6 @@ nav .menu-toggle .fa {
     }
 
 	ul.menu li {
-		float: none;
     display: block;
 		border-bottom: 1px solid #ccc;
 	}
@@ -143,7 +133,6 @@ nav .menu-toggle .fa {
     top: 0;
   }
   .topnav.responsive a {
-    float: none;
     display: block;
     text-align: left;
   }
@@ -174,7 +163,7 @@ section.header-section .section-title {
   position: relative;
 	width: 100%;
 	height: 400px;
-	background-size: cover !important;
+	background-size: cover !important;:
 	background-position: 50% 50% !important;
 }
 
@@ -191,49 +180,30 @@ section.header-section .section-title {
     transform: translate(-50%,-50%);
 }
 
-.slider .info .visited {
-  float: left;
-}
-
 .visited {
-  /*float: left;*/
   font-size: 16px;
+	width: 49%;
+	display: inline-block;
+	text-align: left;
 }
 
 .favourited {
-  float: right;
   font-size: 16px;
+	width: 49%;
+	display: inline-block;
+	text-align: right;
 }
 
 .social-links {
   padding: 10px;
   transition: text-shadow .25s;
+	color: #00adb5;
+	font-size: 2em;
 }
 
 .social-links:hover {
   text-shadow: 0 2px 5px rgba(0,0,0,.16);
   transition: text-shadow .25s;
-}
-
-.facebook:before {
-  font-family: FontAwesome;
-  content: "\f09a";
-  color: #00adb5;
-  font-size: 20px; 
-}
-
-.twitter:before {
-  font-family: FontAwesome;
-  content: "\f099";
-  color: #00adb5;
-  font-size: 20px;
-}
-
-.instagram:before {
-  font-family: FontAwesome;
-  content: "\f16d";
-  color: #00adb5;
-  font-size: 20px;  
 }
 
 .hidden {
@@ -259,11 +229,11 @@ section.header-section .section-title {
 
 .container {
     margin-right: auto;
-    margin-left: auto;	
+    margin-left: auto;
 }
 
 .row {
-	
+
 }
 
 .col-1 {width: 8.33%;}
@@ -290,14 +260,6 @@ section.header-section .section-title {
         width: 100%;
     }
 }
-
-.top{top:0}
-.middle{top:50%;margin-top:-10px;/*half of the .box height*/}
-.bottom{bottom:0}
-
-.left{left:0;}
-.center{left:50%;margin-left:-10px;/*half of the .box width*/}
-.right{right:0;}
 
 section, footer {
     padding: 60px 0;
@@ -375,7 +337,7 @@ h1.title:before {
 }
 
 h1.title span {
-	background: #fff; 
+	background: #fff;
   padding: 0 15px;
   line-height: 40px;
 }
@@ -386,13 +348,13 @@ button {
   background-color: #f1f1f1;
   padding: 15px 25px;
   border: 0;
-  color: #000;
+  color: #333;
 }
 
 button.light-blue {
   background-color: #00adb5;
   color: #fff;
-    
+
 }
 
 button.light-blue ,
@@ -415,13 +377,13 @@ button.dark {
 }
 
 .box {
-  display: block; 
+  display: block;
   margin-bottom: 20px;
   line-height: 1.42857143;
   background-color: #fff;
   border-radius: 2px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
-  transition: box-shadow .25s; 
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  transition: box-shadow .25s;
 }
 .travellers-list .box {
   padding-top: 15px;
@@ -455,7 +417,7 @@ button.dark {
 .travellers-list-small .img-box {
   width: 50px;
   height: 50px;
-  border-radius: 50%;  
+  border-radius: 50%;
   overflow: hidden;
   display: inline-block;
   background-color: #f1f1f1;
@@ -492,8 +454,8 @@ section.user-info .user-img img{
 .travellers-list .img-box img{
   width: 100%;
   height: 200px;
-  object-fit:cover; 
-} 
+  object-fit:cover;
+}
 .box-content {
   padding:15px;
   text-align:left;
@@ -504,7 +466,7 @@ section.user-info .user-img img{
   font-size: 1.65em;
 }
 .box-title a {
-  color: #000;
+  color: #333;
   text-decoration: none !important;
 }
 
@@ -527,12 +489,15 @@ section.user-info .user-img img{
 /*=====AUTHOR=====*/
 .author-box {
   padding: 20px 20px 0;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
 }
 
 .author-box .author-img {
   width: 80px;
   height: 80px;
-  border-radius: 50%;  
+  border-radius: 50%;
   overflow: hidden;
   display: inline-block;
   margin-right: 10px;
@@ -555,25 +520,26 @@ section.user-info .user-img img{
 
 .author-rating {
   display: inline-block;
-  float: right;
   padding: 15px;
 }
 
 /*=====FORM=====*/
-.login-register-form#register-form {
-  display: none;
-}
-
 .login-register-form {
-  position: relative;
+  position: absolute;
   left: 50%;
   top: 20%;
   width: 40%;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-/*  background-color: rgba(250,250,250,0.7);
-  border-radius: 10px;*/
+	opacity: 1;
+	transition: opacity 1s;
+	z-index: 1;
+}
+
+.fade {
+	opacity: 0;
+	z-index: 0;
 }
 
 .login-register-form h1 {
@@ -630,8 +596,6 @@ input[type=text], select, input[type=password], input[type=email] {
 
 
 /*=====FOOTER=====*/
-
-
 footer {
 	left: 0;
 	bottom: 0;
@@ -692,8 +656,8 @@ footer .icon-destination:hover p {
 }
 
 @media only screen and (max-width:500px) {
-  .footer-column { 
-		display: block !important;  
+  .footer-column {
+		display: block !important;
 		width: 100% !important;
 	}
 }
